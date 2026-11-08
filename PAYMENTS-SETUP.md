@@ -12,6 +12,14 @@ The implementation is ready for configuration and testing. There is no Flutterwa
 
 ## Start locally
 
+### Private test-key setup on Windows
+
+After creating your Flutterwave account, select test mode in its dashboard and find the V3 secret API key. In PowerShell, from this project folder, run `./configure-payments.ps1`. Paste the key at its hidden prompt. The helper saves a Git-ignored `.env`, generates a random webhook secret, preserves existing settings, and refuses to overwrite live mode. It does not display the key. Never paste the key into chat.
+
+Run `npm run payments:check` to make a read-only test API request. It checks that Flutterwave accepts the key and lists FCMB, without creating a checkout, sending a payment, or linking the settlement bank. This remains an account-owner dashboard step. `./configure-payments.ps1 -Check` reports configuration flags without displaying secrets.
+
+Restart the server after saving credentials. The helper defaults to the existing preview port 4173; the server otherwise defaults to 4174. Localhost can test return verification, but receiving real Flutterwave webhook deliveries requires a reachable public HTTPS deployment.
+
 Requires Node 24+. No npm dependencies to install.
 
 `npm start`
