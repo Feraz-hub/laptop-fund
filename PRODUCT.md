@@ -9,7 +9,7 @@ Personal fundraiser for an HP OMEN 16 for Blender, 3D modelling, animation, and 
 ## Operating Context
 Static HTML/CSS/JavaScript on the user's laptop, source on GitHub. GitHub Pages deployment succeeds but the public domain has timed out. Local preview uses port 4173.
 ## Capabilities and Constraints
-Five photos, specs with configuration caveat, amount selection and Add amount action, FCMB receiving details and copy button, sharing, confirmed total from fund.json checked every 30 seconds. Adding an amount does not pay or increase the public total. Bank transfers require confirmation and publication. No automatic bank integration.
+Five photos, specs with configuration caveat, amount selection and Add amount action, FCMB receiving details and copy button, sharing. Direct FCMB totals are maintained in fund.json. A Node 24 payment backend combines them with verified live Flutterwave payments and refreshes for visitors every 30 seconds. Checkout, redirect verification, authenticated webhooks, idempotent records, and missed-event reconciliation are implemented. Test payments are excluded from the public total. The user has no Flutterwave account yet; checkout stays disabled until account verification, credentials and persistent HTTPS hosting are ready. Automatic direct-FCMB detection is not connected. Refund/chargeback accounting requires reconciliation before live launch.
 ## Brand Commitments
 Simple sentences. Explain Blender and creative work without gaming marketing. Credit Samuel as builder. Full minimal modern redesign authorized; user delegated routine choices and declined optional confirmation rounds.
 ## Evidence on Hand

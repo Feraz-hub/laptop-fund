@@ -8,11 +8,11 @@ Choose a preset or enter a whole-naira amount, then select **Add amount**. This 
 
 ## Preview
 
-Run `node serve.mjs` in this folder, then open http://localhost:4173 . No installation needed.
+Run `npm start` in this folder, then open http://127.0.0.1:4174 . Requires Node 24+. No dependency installation needed. The existing preview may still be running on port 4173.
 
 ## Confirmed transfers
 
-Verify money in FCMB first. Run `node update-fund.mjs 5000 1 "First contribution received. Thank you!"` with the **cumulative total** and confirmed contribution count, then commit/push fund.json. Visitors refresh the published data every 30 seconds, after GitHub Pages deploys the change. No visitor button can inflate the total. No automatic bank integration is connected. Do not publish donor information without consent.
+Verify money in FCMB first. Run `node update-fund.mjs 5000 1 "First contribution received. Thank you!"` with the **cumulative direct-FCMB total only** and its confirmed contribution count, then publish fund.json. Do not include Flutterwave donations or settlement payouts. The payment server combines that manual total with verified live Flutterwave payments and visitors refresh every 30 seconds. No visitor button can inflate the total. Do not publish donor information without consent.
 
 ## GitHub Pages
 
@@ -20,4 +20,6 @@ Create a public repository named laptop-fund. Push these files to main. In Setti
 
 The target comes from the supplied screenshot, not a live price quote. The listing has inconsistent hardware specifications; confirm configuration and price with the seller before purchase. Zero raised is the initial placeholder until actual receipts are confirmed.
 
-For automatic FCMB transaction detection, connect a suitable verified payment provider and a server-side webhook; never put bank credentials, secret keys or GitHub access tokens in this public frontend.
+## Flutterwave setup
+
+See [PAYMENTS-SETUP.md](PAYMENTS-SETUP.md). Flutterwave Standard checkout, verification, webhook handling and persistent records are implemented. There is no Flutterwave account or key configured yet, so online checkout is disabled. GitHub Pages can serve the static FCMB fallback but cannot run this backend. A Node host with HTTPS and persistent storage is required before live payment activation. `npm test` runs isolated checks with mocked provider responses; no real transaction has been tested.
