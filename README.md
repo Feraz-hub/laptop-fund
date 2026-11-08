@@ -22,7 +22,7 @@ Publish the changed fund.json to GitHub:
 
 `git push origin main`
 
-After GitHub Pages deploys the update, visitors' open pages pick it up on their next 30-second check. The page shows both the last confirmed update and its most recent check. No public button can change the total, and Add amount does not transfer money.
+After GitHub Pages deploys the update, visitors' open pages pick it up on their next 30-second check. The page shows both the last confirmed update and its most recent check. No public button can change the total. Visitors copy the receiving account number and make their transfer in their banking app.
 
 ## Hosting
 
