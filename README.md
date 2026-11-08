@@ -2,6 +2,10 @@
 
 Static fundraiser built locally for GitHub Pages. FCMB bank details are public by design. No bank screenshot, credentials, donor identities or transfer receipts are stored here.
 
+## Contribution flow
+
+Choose a preset or enter a whole-naira amount, then select **Add amount**. This prepares the FCMB transfer instructions and visibly confirms the selected amount. Editing the amount clears that prepared selection. The visitor completes the actual transfer in their banking app; the button never charges money or changes the public total. The gallery starts paused and can be played or navigated manually. Typography is self-hosted; its license is in assets/Manrope-OFL.txt.
+
 ## Preview
 
 Run `node serve.mjs` in this folder, then open http://localhost:4173 . No installation needed.
